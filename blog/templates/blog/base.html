@@ -5,26 +5,31 @@
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Neucha&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 
-        <title>Blog</title>
+        <title>Blog motherfu...</title>
+
     </head>
-    <body>
-        <div class="page-header">
-	    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <h1> <a href="{% url 'post_list' %}">HOME</a> </h1>
-        </div>
 
-<div class="content container">
-    <div class="row">
-        <div class="col-md-8">
+<body>
+    <div class="page-header">
+	    {% if user.is_authenticated %}
+	    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+	    <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+	    <p class="top-menu">Привіт, ваша величність {{ user.username }}<a href="{% url 'logout' %}"> <span class="glyphicon glyphicon-log-out" style=color:grey;></a></p>
+	    {% else %}
+	    <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-log-in"></span></a>
+            <a href="{% url 'register' %}" class="top-menu"><span class="glyphicon glyphicon-registration-mark"></a>
+	    {% endif %}
+        <h1><a href="{% url 'blog.views.post_list' %}">Хата</a></h1>
+    </div>
+    <div class="content">
+        <div class="row">
+            <div class="col-md-8">
             {% block content %}
             {% endblock %}
+            </div>
         </div>
     </div>
-</div>
-
-
-
-    </body>
+</body>
 </html>
