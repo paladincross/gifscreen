@@ -1,0 +1,37 @@
+{% load staticfiles %}
+<html>
+    <head>
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link href='https://fonts.googleapis.com/css?family=Neucha&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+        <title>Blog?</title>
+
+    </head>
+
+<body>
+
+
+<!-- <ul class="nav nav-tabs">
+
+  <li role="presentation"><a href="/">Home</a></li>
+  <li role="presentation" class="active"><a href="{% url 'home.views.index_blog' %}">Blog</a></li>
+  <li role="presentation"><a href="{% url 'home.views.index_gifscreen' %}">Gifscreen</a></li>
+
+
+</ul> -->
+
+        <a class="ghost-button-long" href="/"> << Виберіть застосунок >> </a>
+
+        <div class="page-body" style="">
+           <a class="ghost-button" style="background-image:url(static/images/body_bg.gif)" href="{% url 'home.views.index_blog' %}">Блооооог!</a>
+           <a class="ghost-button2" style="background-image:url(static/images/homer.gif); background-repeat: no-repeat;" href="{% url 'home.views.index_gifscreen' %}">Незабаром...</a>
+        </div>
+ 
+
+</body>
+
+
+</html>

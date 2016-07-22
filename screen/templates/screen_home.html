@@ -1,0 +1,45 @@
+{% load staticfiles %}
+<html>
+    <head>
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="{% static 'css/screen.css' %}">
+<link href='https://fonts.googleapis.com/css?family=Neucha&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+<title>GifHome</title>
+
+<style>
+   body {
+    background-image: url(/static/images/screen_bg.png); /* Путь к фоновому изображению */
+    background-color: #ff9400; /* Цвет фона */
+   }
+</style>
+
+    </head>   
+      <body>
+        <a class="ghost-button-long" style="" href="/">ВИБИРАЙТЕ ЗАСТОСУНОК </a>
+        <div class="page-body" style="">
+<!--
+
+<div>
+           <a class="ghost-button" style="background-image:url(static/images/button1_bg.gif)" href="{% url 'blog.views.post_list' %}">БЛООООГ!</a>
+</div>
+
+<div>
+           <a class="ghost-button2" style="background-image:url(static/images/button2_bg.gif); background-repeat: no-repeat;" href="{% url 'screen.views.screen_home' %}">НЕЗАБАРОМ...</a>
+</div> 
+
+   -->
+
+<a class="homer" style="background-image:url(/static/images/homer.png); background-repeat: no-repeat;" href=""></a>
+
+
+        </div> 
+
+
+
+      </body>
+
+
+</html>
